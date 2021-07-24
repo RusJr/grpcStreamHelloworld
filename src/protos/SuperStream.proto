@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service SuperStream {
+  rpc getAnswer (stream ClientMessage) returns (stream ServerReply) {}
+}
+
+message ClientMessage {
+  string text = 1;
+}
+
+message ServerReply {
+  string text = 1;
+}
